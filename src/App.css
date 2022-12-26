@@ -7,13 +7,21 @@
 
 /*--------NavBar--------*/
 
+.space{
+  padding-top: 59px;
+}
+
 nav{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 0rem;
   width: 100%;
-  height: 100px;
+  height: 60px;
+  background-color: rgb(255, 255, 255);
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  z-index: 9999;
+  box-shadow: 0px 0px 7px rgb(211, 211, 211);
 }
 
 nav ul{
@@ -21,6 +29,7 @@ nav ul{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin: 0px;
 }
 
 nav ul li{
@@ -35,25 +44,43 @@ nav ul li:hover{
 nav ul li a{
   text-decoration: none;
   color: black;
-  font-size: 1rem;
+  font-size: .9rem;
 }
 
 .logo{
-  flex: 60%;
-  margin-left: 2rem;
+  flex: 20%;
+  margin-left: 1rem;
   justify-content: flex-start;
 }
 
 .logo img{
-  width: 150px;
+  width: 120px;
 }
 
+.containerBuscador{
+  flex: 40%;
+  display: flex;
+  gap: .1rem;
+}
+
+.buscador{
+  width: 80%;
+  padding: .1rem .5rem;
+  height: 2rem;
+  border: none;
+}
+
+.btnBuscador{
+  padding: .1rem .5rem;
+  width: 15%;
+  height: 2rem;
+  border: none;
+}
 
 /*--------Consulta--------*/
 
 .containerConsulta{
   display: flex;
-  margin-top: 1rem;
   background-color: rgb(44, 125, 255);
 }
 
@@ -103,4 +130,110 @@ nav ul li a{
 .inputConsultaBtn{
   width: 150px;
   outline: none;
+}
+
+
+/*--------Nostros--------*/
+
+.containerNosotros{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 0rem 5rem;
+}
+
+.containerNosotros img{
+  width: 780px;
+}
+
+.containerNosotros h1{
+  margin: 2rem 0rem;
+}
+
+.containerNosotros p{
+
+}
+
+/*--------Categorias--------*/
+
+.containerCategorias{
+  width: 100%;
+  padding: 1rem 0rem 0rem;
+}
+
+.navCategorias{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.navCategorias h1{
+  text-align: center;
+  flex: 30%;
+  border-right: 1px solid black;
+}
+
+.containerBuscadorCategorias{
+  display: flex;
+  justify-content: center;
+  flex: 70%;
+  gap: .1rem;
+}
+
+.buscadorCategorias{
+  width: 60%;
+  padding: .1rem .5rem;
+  height: 2rem;
+  border: 1px solid black;
+}
+
+.btnBuscadorCategorias{
+  padding: .1rem .5rem;
+  width: 15%;
+  height: 2rem;
+  border: none;
+}
+
+
+/*--------Footer--------*/
+
+.containerFooter{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem 0rem 0rem;
+}
+
+.redesFooter{
+  flex: 40%;
+}
+
+.containerImgFooter{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.linkFooter{
+  height: 80px;
+}
+ .imgFooter{
+  height: 100%;
+ }
+
+.contactanosFooter{
+  flex: 30%;
+}
+
+.localFooter{
+  flex: 30%;
+}
+
+.tituloFooter{
+  text-align: center;
+  margin: 0rem 0rem 1rem;
+}
+
+.infoFooter{
+  text-align: center;
 }
