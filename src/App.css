@@ -47,3 +47,60 @@ nav ul li a{
 .logo img{
   width: 150px;
 }
+
+
+/*--------Consulta--------*/
+
+.containerConsulta{
+  display: flex;
+  margin-top: 1rem;
+  background-color: rgb(44, 125, 255);
+}
+
+.encabezadoConsulta{
+  display: flex;
+  flex-direction: column;
+  flex: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+}
+
+.tituloConsulta{
+  margin: .5rem 1rem;
+}
+
+.textoConsulta{
+  margin: .5rem 1rem;
+}
+
+.consulta{
+  flex: 50%;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.inputConsultaText{
+  width: 350px;
+  outline: none;
+}
+
+.inputConsultaEmail{
+  width: 350px;
+  outline: none;
+}
+
+.inputConsultaMsj{
+  width: 350px;
+  height: 200px;
+  outline: none;
+}
+
+.inputConsultaBtn{
+  width: 150px;
+  outline: none;
+}
