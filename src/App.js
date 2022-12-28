@@ -4,7 +4,7 @@ import Rutas from './routes/routes.jsx';
 
 function App() {
   return (
-    <div>
+    <div className='dadContainer'>
       <CartProvider>
         <Rutas/> 
       </CartProvider>

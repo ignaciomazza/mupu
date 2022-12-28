@@ -3,6 +3,8 @@ import db from '../../services'
 import { collection, getDocs } from 'firebase/firestore';
 import { Link } from "react-router-dom";
 
+
+
 const Categorias = () => {
 
     const [cat, setCat] = useState([]);
@@ -44,16 +46,19 @@ const Categorias = () => {
               <button className='btnBuscadorCategorias'>Buscar</button>
             </form>
           </div>
-          {cat.map((item, index) => (
-            <Link to={`/category/${item.categoria}`}>
-              <div className='containerCategoria' >
-                <img src={item.img} alt=""/>
-                <div className='nombreCategoria'>
-                  <h5>{item.nombre.toUpperCase()}</h5>
+          <div className='containerLinkCategoria'>
+            {cat.map((item, index) => (
+              <Link className='linkCategoria' to={`/category/${item.categoria}`}>
+                <div className='containerCategoria' >
+                  <img src={item.img} alt=""/>
+                  <div className='nombreCategoria'>
+                    <h5>{item.nombre.toUpperCase()}</h5>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
+          
         </div>
     </div>
   )

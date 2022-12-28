@@ -15,7 +15,7 @@ const CarouselApp = () => {
               <Carousel.Item>
                   <img
                       className="d-block w-100"
-                      style={{height: 600}}
+                      style={{height: 542}}
                       src="https://interprofessional.global/wp-content/uploads/2018/11/AUNZ-header-1920x600.jpg"
                       alt="First slide"
                   />
@@ -27,7 +27,7 @@ const CarouselApp = () => {
               <Carousel.Item>
                   <img
                       className="d-block w-100"
-                      style={{height: 600}}
+                      style={{height: 542}}
                       src="https://www.neel-schaffer.com/wp-content/uploads/2015/06/Lighting-1920x600.jpg"
                       alt="Second slide"
                   />
@@ -40,7 +40,7 @@ const CarouselApp = () => {
               <Carousel.Item>
                   <img
                       className="d-block w-100"
-                      style={{height: 600}}
+                      style={{height: 542}}
                       src="https://sportsworldrunningclub.com/wp-content/uploads/2018/04/beautiful_night_city-wallpaper-1920x600.jpg"
                       alt="Third slide"
                   />
