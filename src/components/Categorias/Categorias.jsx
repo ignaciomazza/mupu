@@ -52,7 +52,8 @@ const Categorias = () => {
                   <h5>{item.nombre.toUpperCase()}</h5>
                 </div>
               </div>
-            </Link>))}
+            </Link>
+          ))}
         </div>
     </div>
   )
