@@ -7,8 +7,37 @@ import { collection, getDocs } from 'firebase/firestore';
 const Viajes = () => {
 
   const [viajes, setViajes] = useState([]);
+  const [banners, setBanners] = useState([]);
   const params = useParams();
+  const Banner = params ? banners.filter((item) => item.categoria === params.id) : banners
   const Categoria = params ? viajes.filter((item) => item.categoria === params.id) : viajes
+
+  useEffect(() => {
+
+    const getData = async () => {
+      const data = collection(db, "banners");
+      const col = await getDocs(data);
+      const res = col.docs.map((doc) => doc={id:doc.id, ...doc.data()} );
+      return res;
+  }
+  
+  const task = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(getData())
+      
+    }, 500);
+  })
+
+  task
+    .then((resultado) => {
+      setBanners(resultado)
+    })
+    .catch((err) => console.log(err))
+
+  return () => {
+      
+  }
+}, [])
 
   useEffect(() => {
 
@@ -39,8 +68,15 @@ const Viajes = () => {
 
   return (
     <div>
+      <div className='bannerViajes'>
+        {Banner.map((item, index) => (
+          <img src={item.img} alt="" />
+        ))}
+        <h1>Viajes</h1>
+      </div>
+      <div className='containerLinkCategoria'>
         {Categoria.map((item, index) => (
-            <Link to={`/travel-detail/${item.id}`}>
+            <Link className='linkCategoria' to={`/travel-detail/${item.id}`}>
               <div className='containerCategoria' >
                 <img src={item.img} alt=""/>
                 <div className='nombreCategoria'>
@@ -49,6 +85,7 @@ const Viajes = () => {
               </div>
             </Link>
         ))}
+      </div>
     </div>
   )
 }

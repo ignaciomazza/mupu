@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 
-const CarouselApp = () => {
+const CarouselApp = (props) => {
+
     const [index, setIndex] = useState(0);
+
+    const {CarouselFirst, CarouselSecond, CarouselThird} = props
+
+
 
     const handleSelect = (selectedIndex, e) => {
       setIndex(selectedIndex);
@@ -16,7 +21,7 @@ const CarouselApp = () => {
                   <img
                       className="d-block w-100"
                       style={{height: 542}}
-                      src="https://interprofessional.global/wp-content/uploads/2018/11/AUNZ-header-1920x600.jpg"
+                      src={CarouselFirst}
                       alt="First slide"
                   />
                   <Carousel.Caption>
@@ -28,7 +33,7 @@ const CarouselApp = () => {
                   <img
                       className="d-block w-100"
                       style={{height: 542}}
-                      src="https://www.neel-schaffer.com/wp-content/uploads/2015/06/Lighting-1920x600.jpg"
+                      src={CarouselSecond}
                       alt="Second slide"
                   />
   
@@ -41,7 +46,7 @@ const CarouselApp = () => {
                   <img
                       className="d-block w-100"
                       style={{height: 542}}
-                      src="https://sportsworldrunningclub.com/wp-content/uploads/2018/04/beautiful_night_city-wallpaper-1920x600.jpg"
+                      src={CarouselThird}
                       alt="Third slide"
                   />
   

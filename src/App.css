@@ -5,7 +5,7 @@
 }
 
 .dadContainer{
-  background-color: rgb(38, 38, 38);
+  background-color: rgb(20, 20, 20);
 }
 
 /*--------NavBar--------*/
@@ -20,7 +20,7 @@ nav{
   align-items: center;
   width: 100%;
   height: 60px;
-  background-color: rgb(54, 54, 54);
+  background-color: rgb(30, 30, 30);
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   z-index: 9999;
@@ -78,31 +78,36 @@ nav ul li a:visited{
   justify-content: center;
   align-items: center;
   display: flex;
-  gap: .1rem;
+  gap: 0rem;
 }
 
 .buscador{
   width: 60%;
   padding: .1rem .5rem;
-  height: 1.8rem;
+  height: 2rem;
   border: none;
-  background-color: rgb(98, 98, 98);
+  background-color: rgb(40, 40, 40);
+  border-radius: .2rem;
 }
 
 .btnBuscador{
-  padding: .1rem .5rem;
-  width: 10%;
+  padding: .1rem .1rem;
+  width: 7%;
   height: 1.8rem;
   border: none;
   color: white;
-  background-color: rgb(98, 98, 98);
+  background-color: transparent;
 }
 
 /*--------Consulta--------*/
 
 .containerConsulta{
   display: flex;
-  background-color: rgb(44, 125, 255);
+  background-image: url("img/4.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #464646;
 }
 
 .encabezadoConsulta{
@@ -116,10 +121,12 @@ nav ul li a:visited{
 
 .tituloConsulta{
   margin: .5rem 1rem;
+  color: white;
 }
 
 .textoConsulta{
   margin: .5rem 1rem;
+  color: white;
 }
 
 .consulta{
@@ -182,6 +189,8 @@ nav ul li a:visited{
 .containerCategorias{
   width: 100%;
   padding: 1rem 0rem 0rem;
+  background: rgb(24,24,24);
+  background: linear-gradient(0deg, rgb(5, 5, 5) 0%, rgba(40,40,40,1) 50%, rgba(5,5,5,1) 100%);
 }
 
 .navCategorias{
@@ -228,7 +237,7 @@ nav ul li a:visited{
 }
 
 .containerCategoria{
-  transition: .6s;
+  transition: .4s;
 }
 
 .containerCategoria:hover{
@@ -239,17 +248,24 @@ nav ul li a:visited{
   width: 175px;
   height: 355px;
   object-fit: cover;
+  transition: .4s;
+}
+
+.containerCategoria img:hover{
+  box-shadow: 0px 0px 15px 10px rgb(15, 15, 15);
 }
 
 .nombreCategoria{
   position: relative;
   bottom: 4rem;
+  height: 39px;
+  width: 165px;
 }
 
 .nombreCategoria h5{
   color: white;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .linkCategoria{
@@ -257,25 +273,56 @@ nav ul li a:visited{
   width: 170px;
 }
 
+
+/*--------Viajes--------*/
+
+.bannerViajes{
+  margin-bottom: 1rem;
+}
+
+.bannerViajes img{
+  height: 370px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.bannerViajes h1{
+  color: white;
+}
+
+
 /*--------Footer--------*/
 
 .containerFooter{
   display: flex;
   justify-content: space-evenly;
-  margin: 2rem 0rem 0rem;
+  padding: 1.99rem 0rem 0rem;
+  background-image: url("img/4.png");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #464646;
 }
 
 .redesFooter{
   flex: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .containerImgFooter{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .linkFooter{
   height: 80px;
+  color: white;
 }
  .imgFooter{
   height: 100%;
@@ -283,17 +330,23 @@ nav ul li a:visited{
 
 .contactanosFooter{
   flex: 30%;
+  color: white;
 }
 
 .localFooter{
   flex: 30%;
+  color: white;
 }
 
 .tituloFooter{
   text-align: center;
   margin: 0rem 0rem 1rem;
+  color: white;
 }
 
 .infoFooter{
   text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
 }

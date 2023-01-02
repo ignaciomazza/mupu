@@ -6,8 +6,6 @@ const NavBar = (props) => {
 
   const {logo} = props;
 
-  
-
   return (
     <div>
       <div className='space'></div>
@@ -17,7 +15,7 @@ const NavBar = (props) => {
         </div>
         <form action="" className='containerBuscador'>
           <input type="text" placeholder='Buscar' className='buscador'/>
-          <button className='btnBuscador'><box-icon name='search' color='#ffffff' ></box-icon></button>
+          <button className='btnBuscador'><box-icon size='sm' name='search' color='ABABAB' ></box-icon></button>
         </form>
         <ul>
           <li><Link to={`/`}>inicio</Link></li>
