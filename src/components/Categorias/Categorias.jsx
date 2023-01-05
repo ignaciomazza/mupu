@@ -22,7 +22,7 @@ const Categorias = () => {
         setTimeout(() => {
           resolve(getData())
           
-        }, 300);
+        }, 500);
       })
     
       task
@@ -43,7 +43,7 @@ const Categorias = () => {
             <h1>CATEGORIAS</h1>
             <form action="" className='containerBuscadorCategorias'>
               <input type="text" placeholder='Buscar' className='buscadorCategorias'/>
-              <button className='btnBuscadorCategorias'>Buscar</button>
+              <button className='btnBuscadorCategorias'><box-icon size='sm' name='search' color='grey' ></box-icon></button>
             </form>
           </div>
           <div className='containerLinkCategoria'>
@@ -58,7 +58,6 @@ const Categorias = () => {
               </Link>
             ))}
           </div>
-          
         </div>
     </div>
   )

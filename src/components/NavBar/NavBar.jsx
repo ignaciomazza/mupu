@@ -15,12 +15,12 @@ const NavBar = (props) => {
         </div>
         <form action="" className='containerBuscador'>
           <input type="text" placeholder='Buscar' className='buscador'/>
-          <button className='btnBuscador'><box-icon size='sm' name='search' color='ABABAB' ></box-icon></button>
+          <button className='btnBuscador'><box-icon size='sm' name='search' color='grey' ></box-icon></button>
         </form>
         <ul>
-          <li><Link to={`/`}>inicio</Link></li>
-          <li><Link to={`/contacto`}>contacto</Link></li>
-          <li><Link to={`/nosotros`}>nosotros</Link></li>
+          <li><Link to={`/`}>Inicio</Link></li>
+          <li><Link to={`/contacto`}>Contacto</Link></li>
+          <li><Link to={`/nosotros`}>Nosotros</Link></li>
         </ul>
       </nav>
     </div>

@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import db from '../../services'
 import { collection, getDocs } from 'firebase/firestore';
+import Footer from '../Footer/Footer.jsx';
+import Facebook from '../../img/facebook.svg';
+import Instagram from '../../img/instagram.svg';
+import Whatsapp from '../../img/whatsapp.svg';
 
 const Viaje = () => {
 
@@ -40,15 +44,17 @@ const Viaje = () => {
   return (
     <div>
         {viaje.map((item, index) => (
-            <Link to={`/travel-detail/${item.id}`}>
-              <div className='containerCategoria' >
-                <img src={item.img} alt=""/>
-                <div className='nombreCategoria'>
-                  <h5>{item.nombre.toUpperCase()}</h5>
+              <div className='viajeContainer' >
+                <div className='datosPrincipalesViaje'>
+                  <h1>{item.nombre.toUpperCase()}</h1>
+                  <p>{item.descripcion}</p>
+                </div>
+                <div className='containerImgViaje'>
+                  <img src={item.img} alt=""/>
                 </div>
               </div>
-            </Link>
         ))}
+        <Footer key="Footer" Facebook={Facebook} Instagram={Instagram} Whatsapp={Whatsapp}/>
     </div>
   )
 }

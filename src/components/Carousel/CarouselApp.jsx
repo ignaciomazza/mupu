@@ -4,57 +4,34 @@ import Carousel from 'react-bootstrap/Carousel';
 const CarouselApp = (props) => {
 
     const [index, setIndex] = useState(0);
-
     const {CarouselFirst, CarouselSecond, CarouselThird} = props
-
-
 
     const handleSelect = (selectedIndex, e) => {
       setIndex(selectedIndex);
     };
   
-  
     return (
       <div>
           <Carousel activeIndex={index} onSelect={handleSelect}>
               <Carousel.Item>
-                  <img
-                      className="d-block w-100"
-                      style={{height: 542}}
-                      src={CarouselFirst}
-                      alt="First slide"
-                  />
+                  <img className="d-block w-100" style={{height: 685}} src={CarouselFirst} alt="First slide"/>
                   <Carousel.Caption>
-                      <h3>First slide label</h3>
-                      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                      <h3>EXPLORA</h3>
+                      <p>LO SALVAJE</p>
                   </Carousel.Caption>
               </Carousel.Item>
               <Carousel.Item>
-                  <img
-                      className="d-block w-100"
-                      style={{height: 542}}
-                      src={CarouselSecond}
-                      alt="Second slide"
-                  />
-  
+                  <img className="d-block w-100" style={{height: 685}} src={CarouselSecond} alt="Second slide"/>
                   <Carousel.Caption>
-                      <h3>Second slide label</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                      <h3>VIVI</h3>
+                      <p>LA EXPERIENCIA</p>
                   </Carousel.Caption>
               </Carousel.Item>
               <Carousel.Item>
-                  <img
-                      className="d-block w-100"
-                      style={{height: 542}}
-                      src={CarouselThird}
-                      alt="Third slide"
-                  />
-  
+                  <img className="d-block w-100" style={{height: 685}} src={CarouselThird} alt="Third slide"/>
                   <Carousel.Caption>
-                      <h3>Third slide label</h3>
-                      <p>
-                          Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                      </p>
+                      <h3>ANIMATE</h3>
+                      <p>A LA AVENTURA</p>
                   </Carousel.Caption>
               </Carousel.Item>
           </Carousel>

@@ -27,7 +27,7 @@ const routes = () => {
           <Route path="/travel-detail/:id" element={<Viaje key={"Viaje"}/>}/>
 
       </Routes>
-      <Footer key="Footer" Facebook={Facebook} Instagram={Instagram} Whatsapp={Whatsapp}/>
+      {/* <Footer key="Footer" Facebook={Facebook} Instagram={Instagram} Whatsapp={Whatsapp}/> */}
     </BrowserRouter>
   )
 }

@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import db from '../../services'
 import { collection, getDocs } from 'firebase/firestore';
+import Footer from '../Footer/Footer.jsx';
+import Facebook from '../../img/facebook.svg';
+import Instagram from '../../img/instagram.svg';
+import Whatsapp from '../../img/whatsapp.svg';
 
 const Viajes = () => {
 
@@ -86,6 +90,7 @@ const Viajes = () => {
             </Link>
         ))}
       </div>
+      <Footer key="Footer" Facebook={Facebook} Instagram={Instagram} Whatsapp={Whatsapp}/>
     </div>
   )
 }
