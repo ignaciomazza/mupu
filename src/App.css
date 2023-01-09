@@ -343,10 +343,19 @@ nav ul li a:visited{
 
 .viajeContainer{
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.viajePrincipalContainer{
+  display: flex;
   justify-content: space-evenly;
   align-items: center;
   padding: 3rem 0rem;
-  width: 100%;
+  width: 90%;
 }
 
 .containerImgViaje{
@@ -360,6 +369,7 @@ nav ul li a:visited{
   height: 500px;
   object-fit: cover;
   border-radius: .2rem;
+  box-shadow: 0px 0px 55px 25px rgb(5, 5, 5);
 }
 
 .datosPrincipalesViaje{
@@ -377,7 +387,66 @@ nav ul li a:visited{
 
 .datosPrincipalesViaje p{
   color: white;
-  width: 80%;
+  width: 100%;
+}
+
+.infoViaje{
+  display: flex;
+  width: 90%;
+}
+
+.datosViaje{
+  display: flex;
+  flex-direction: column;
+  flex: 40%;
+  margin-top: 1rem;
+}
+
+.datosViaje p{
+  color: white;
+}
+
+.datosViaje h3{
+  color: white;
+  margin: 1.2rem 0rem;
+}
+
+.pagoViaje{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 60%;
+  margin-top: 1rem;
+}
+
+.pagoViaje h3{
+  color: white;
+  margin: 1.2rem 0rem;
+}
+
+.pagoViaje h4{
+  color: white;
+}
+
+.pagoViaje p{
+  color: white;
+}
+
+.pagoViaje button{
+  outline: none;
+  background-color: #3fc173;
+  color: white;
+  border-radius: .2rem;
+  border: 1px solid rgb(5, 5, 5); 
+  padding: .3rem .5rem;
+  margin: 4rem 0rem 0rem;
+  font-size: 1.1rem;
+  box-shadow: 0px 0px 45px 25px rgb(5, 5, 5);
+  transition: .4s;
+}
+
+.pagoViaje button:hover{
+  transform: scale(1.04);
 }
 
 
@@ -391,7 +460,7 @@ nav ul li a:visited{
 }
 
 .redesFooter{
-  flex: 40%;
+  flex: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;

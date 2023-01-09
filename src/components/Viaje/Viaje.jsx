@@ -44,7 +44,8 @@ const Viaje = () => {
   return (
     <div>
         {viaje.map((item, index) => (
-              <div className='viajeContainer' >
+          <div className='viajeContainer'>
+              <div className='viajePrincipalContainer' >
                 <div className='datosPrincipalesViaje'>
                   <h1>{item.nombre.toUpperCase()}</h1>
                   <p>{item.descripcion}</p>
@@ -53,6 +54,31 @@ const Viaje = () => {
                   <img src={item.img} alt=""/>
                 </div>
               </div>
+              <div className='infoViaje'>
+                <div className='datosViaje'>
+                  <h3>DATOS DEL VIAJE</h3>
+                  <p>Destino: {item.destino}</p>
+                  <p>Duracion: {item.duracion}</p>
+                  <p>Transporte: {item.transporte}</p>
+                  <p>Hotel: {item.hotel}</p>
+                  {item.alojamiento != false && <p>Alojamiento incluido</p>}
+                  <p>Regimen de comida: {item.regimen}</p>
+                  <p>Excursiones: {item.excursiones}</p>
+                  {item.asistencia != false && <p>Asistencia al viajero</p>}
+                  {item.traslado != false && <p>Traslados</p>}
+                  
+                </div>
+                <div className='pagoViaje'>
+                  <h3>PRECIO</h3>
+                  <p>${item.precio}</p>
+                  <h4>MEDIOS DE PAGO</h4>
+                  <p>Dinero en efectivo</p>
+                  <p>Debito</p>
+                  <p>Credito</p>
+                  <button>CONSULTAR RESERVA</button>
+                </div>
+              </div>
+          </div>
         ))}
         <Footer key="Footer" Facebook={Facebook} Instagram={Instagram} Whatsapp={Whatsapp}/>
     </div>
