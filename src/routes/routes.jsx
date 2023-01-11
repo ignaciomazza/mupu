@@ -23,7 +23,7 @@ const routes = () => {
           <Route path="/" element={<Inicio key="Inicio" CarouselFirst={CarouselFirst} CarouselSecond={CarouselSecond} CarouselThird={CarouselThird}/>} />
           <Route path="/contacto" element={<Contacto key="Contacto"/>}/>
           <Route path="/nosotros" element={<Nosotros key="Nosotros" logo={logo}/>}/>
-          <Route path="/category/:id" element={<Viajes key={"Viajes"}/>}/>
+          <Route path="/category/:id/provincia/:prov" element={<Viajes key={"Viajes"}/>}/>
           <Route path="/travel-detail/:id" element={<Viaje key={"Viaje"}/>}/>
 
       </Routes>

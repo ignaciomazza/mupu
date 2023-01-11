@@ -48,7 +48,7 @@ const Categorias = () => {
           </div>
           <div className='containerLinkCategoria'>
             {cat.map((item, index) => (
-              <Link className='linkCategoria' to={`/category/${item.categoria}`}>
+              <Link className='linkCategoria' to={`/category/${item.categoria}/provincia/all`}>
                 <div className='containerCategoria' >
                   <img src={item.img} alt=""/>
                   <div className='nombreCategoria'>

@@ -338,6 +338,55 @@ nav ul li a:visited{
   color: white;
 }
 
+.filtrosYcategorias{
+  display: flex;
+}
+
+.containerLinkCategoriaViajes{
+  flex: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.viajesFiltros{
+  flex: 10%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.btnProvincias{
+  font-size: 1.5rem;
+}
+
+.btnProvincias:hover{
+  cursor: pointer;
+}
+
+.provincias{
+  background-color: rgb(30, 30, 30);
+  padding: .4rem;
+}
+
+.provincias ul{
+  padding: 0rem;
+  margin: 0rem;
+}
+
+.provincias ul li{
+  list-style: none;
+}
+
+.provincias ul li a{
+  color: white;
+  text-decoration: none;
+}
 
 /*--------Viaje--------*/
 
@@ -478,9 +527,6 @@ nav ul li a:visited{
   height: 80px;
   color: white;
 }
- .imgFooter{
-  height: 100%;
- }
 
 .contactanosFooter{
   flex: 30%;
@@ -503,4 +549,66 @@ nav ul li a:visited{
   color: white;
   display: flex;
   flex-direction: column;
+}
+
+
+/*--------Responsive--------*/
+
+@media (max-width: 930px) {
+  .containerRowConsulta{
+    display: flex;
+    flex-direction: column;
+    height: 92vh;
+  }
+
+  .encabezadoConsulta{
+    padding: 4rem 1rem 1rem;
+  }
+
+  .consulta{
+    padding-top: 0rem;
+  }
+
+  .textoConsulta{
+    margin: .5rem 0rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .containerFooter{
+    flex-direction: column;
+    margin-top: 4rem;
+  }
+
+  .tituloFooter{
+    margin: 2.5rem 0rem 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .containerCategoria img{
+    width: 310px;
+    height: 550px;
+  }
+
+  .linkCategoria{
+    text-decoration: none;
+    width: 310px;
+  }
+
+  .nombreCategoria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 5rem;
+    height: 2rem;
+    width: 310px;
+  }
+}
+
+@media (max-width: 400px) {
+  .containerFooter{
+    margin-top: 10rem;
+  }
 }
