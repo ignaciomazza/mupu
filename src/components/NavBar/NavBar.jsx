@@ -1,27 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import 'boxicons'
 
 const NavBar = (props) => {
 
-  const {logo} = props;
+  const {logo, menu} = props;
+
+  const [estado, setEstado] = useState(false);
+
+  function aparecerMenu (valor) {
+    if (valor){
+      setEstado(false);
+    }else{
+      setEstado(true);
+    }
+  }
 
   return (
     <div>
-      <div className='space'></div>
       <nav>
         <div className='logo'>
           <Link to={`/`}><img src={logo} alt="logo" /></Link>
         </div>
-        <form action="" className='containerBuscador'>
-          <input type="text" placeholder='Buscar' className='buscador'/>
-          <button className='btnBuscador'><box-icon size='sm' name='search' color='grey' ></box-icon></button>
-        </form>
-        <ul>
-          <li><Link to={`/`}>Inicio</Link></li>
-          <li><Link to={`/contacto`}>Contacto</Link></li>
-          <li><Link to={`/nosotros`}>Nosotros</Link></li>
+        <ul className='ul-desktop'>
+          <li><Link to={`/`}>Agregar Viaje</Link></li>
+          <li><Link to={`/eliminar`}>Eliminar Viaje</Link></li>
+          <li><Link to={`/consultas`}>Consultas</Link></li>
+          <li><Link to={`/reservas`}>Reservas</Link></li>
         </ul>
+        <div className="btn-menu">
+          <box-icon size='md' name='menu' color='grey' onClick={() => aparecerMenu(estado)}></box-icon>
+        </div>
+        {estado == true && <div className='burguer-menu'><ul className='menu'><li><Link to={`/`}>Agregar Viaje</Link></li><li><Link to={`/eliminar`}>Eliminar Viaje</Link></li><li><Link to={`/consultas`}>Consultas</Link></li><li><Link to={`/reservas`}>Reservas</Link></li></ul></div>}
       </nav>
     </div>
     
