@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { v4 } from 'uuid';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAo8J7AAeEvzxWjNhTx7jhmxfZQ-Cq4F54",
@@ -14,7 +14,13 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+export const db = getFirestore(app);
 
 export const storage = getStorage(app);
-export default db;
+
+export async function uploadFile(file) {
+  const storageRef = ref(storage, v4())
+  await uploadBytes(storageRef, file)
+  const url = await getDownloadURL(storageRef) 
+  return url
+}

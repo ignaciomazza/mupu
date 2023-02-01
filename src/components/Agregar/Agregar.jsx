@@ -1,58 +1,75 @@
 import React, { useState } from 'react';
-import db from '../../services'
+import { uploadFile, db } from '../../services'
 import { collection, addDoc } from 'firebase/firestore';
 
 export const Agregar = () => {
 
     const [formulario, setFormulario] = useState({
-        email: "",
         nombre: "",
-        apellido: "",
-        telefono: "",
-        consulta: ""
+        precio: "",
+        duracion: "",
+        hotel: "",
+        descripcion: "",
+        transporte: "",
+        categoria: "",
+        continente: "",
+        pais: "",
+        provincia: "",
+        busqueda: "",
+        traslado: "",
+        alojamiento: "",
+        asistencia: "",
+        img: ""
       });
+
+      const [file, setFile] = useState("")
+      const [url, setUrl] = useState("")
     
-      const {email, nombre, apellido, telefono, consulta } = formulario;
+      const {nombre, precio, duracion, hotel, descripcion, transporte, categoria, continente, pais, provincia, busqueda, traslado, alojamiento, asistencia, img } = formulario;
+
+      
+      // const imagen =  uploadFile(file)
+      // setUrl(imagen)
     
-      const handleChange = (e) => {
+      const handleChange = async (e) => {
         const { name, value } = e.target;
-        setFormulario({
-          consulta: {
-            ...formulario.consulta,
-            [name]: value
-          }
-        });
+          setFormulario({
+            ...formulario,
+            [name]: value,
+            img: url
+          });
       }
-    
-      const setInFireBase = async (consulta) => {
-        if (consulta.email != "" && consulta.nombre != "" && consulta.apellido != "" && consulta.telefono != "" && consulta.consulta != "") {
+
+      const setInFireBase = async (nombre, precio, duracion, hotel, descripcion, transporte, categoria, continente, pais, provincia, busqueda, traslado, alojamiento, asistencia, destino, regimen, excursiones, img) => {
+        if (nombre != "" && precio != "" && duracion != "" && hotel != "" && descripcion != "" && transporte != "" && categoria != "" && continente != "" && pais != "" && busqueda != "" && traslado != "" && alojamiento != "" && asistencia != "" && destino != "" && regimen != "" && excursiones != "") {
           try {
-            const data = collection(db, "consulta");
-            const col = await addDoc(data, consulta);
+            const data = collection(db, "viajes");
+            const col = await addDoc(data, nombre, precio, duracion, hotel, descripcion, transporte, categoria, continente, pais, provincia, busqueda, traslado, alojamiento, asistencia, destino, regimen, excursiones, img);
             alert("Su numero de orden es: " + col.id)
           } catch (error) {
             console.log(error)
           }
         }else{
-          alert("Complete todos los campos para poder realizar la consulta")
+          alert("Complete todos los campos para poder guardar el paquete")
         }
       }
 
   return (
     <div className='consulta'>
-      <input type="text" name="nombre" className='inputConsultaText' placeholder='Nombre' onChange={handleChange}/>
+      <input type="text" name="nombre" className='inputConsultaText padin' placeholder='Nombre' onChange={handleChange}/>
+      <input type="text" name="destino" className='inputConsultaText' placeholder='Destino' onChange={handleChange}/>
       <input type="number" name="precio" className='inputConsultaText' placeholder='Precio' onChange={handleChange}/>
       <input type="text" name="duracion" className='inputConsultaText' placeholder='Duracion' onChange={handleChange}/>
       <input type="text" name="hotel" className='inputConsultaText' placeholder='Hotel' onChange={handleChange}/>
-      <input type="text" name="descricpion" className='inputConsultaText' placeholder='Descricpion' onChange={handleChange}/>
-      <p>Imagen</p>
-      <input type="file" name="descricpion" className='inputConsultaText' onChange={handleChange}/>
-      <p>Transporte</p>
+      <input type="text" name="descripcion" className='inputConsultaText' placeholder='Descripcion' onChange={handleChange}/>
+      <p className='textoConsulta'>Imagen</p>
+      <input type="file" name="img" className='inputConsultaText' onChange={ (e) => setFile(e.target.files[0])}/>
+      <p className='textoConsulta'>Transporte</p>
       <select name="transporte" onChange={handleChange} className='inputConsultaText'>
         <option value="avion">Avion</option>
         <option value="bus">Bus</option>
       </select>
-      <p>Categoria</p>
+      <p className='textoConsulta'>Categoria</p>
       <select name="categoria" onChange={handleChange} className='inputConsultaText'>
         <option value="argavion">Avion Agentina</option>
         <option value="busarg">Bus Argentina</option>
@@ -71,6 +88,23 @@ export const Agregar = () => {
       <input type="text" name="pais" className='inputConsultaText' placeholder='Pais' onChange={handleChange}/>
       <input type="text" name="provincia" className='inputConsultaText' placeholder='Provincia' onChange={handleChange}/>
       <input type="text" name="busqueda" className='inputConsultaText' placeholder='Palabras clave' onChange={handleChange}/>
+      <input type="text" name="regimen" className='inputConsultaText' placeholder='Regimen' onChange={handleChange}/>
+      <input type="text" name="excursiones" className='inputConsultaText' placeholder='Excursiones' onChange={handleChange}/>
+      <p className='textoConsulta'>Traslado</p>
+      <select name="traslado" onChange={handleChange} className='inputConsultaText'>
+        <option value="true">Si</option>
+        <option value="false">No</option>
+      </select>
+      <p className='textoConsulta'>Alojamiento</p>
+      <select name="alojamiento" onChange={handleChange} className='inputConsultaText'>
+        <option value="true">Si</option>
+        <option value="false">No</option>
+      </select>
+      <p className='textoConsulta'>Asistencia</p>
+      <select name="asistencia" onChange={handleChange} className='inputConsultaText'>
+        <option value="true">Si</option>
+        <option value="false">No</option>
+      </select>
       <input type="button" value="Enviar" className='inputConsultaBtn z' onClick={() => setInFireBase(formulario)}/>
     </div>
   )

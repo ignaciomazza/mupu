@@ -4,10 +4,9 @@ import Rutas from './routes/routes.jsx';
 function App() {
   return (
     <div className='dadContainer'>
-        <Rutas/> 
+        <Rutas/>
     </div>
   );
 }
 
 export default App;
-
