@@ -186,22 +186,34 @@ nav .ul-desktop{
 
 .consultasBackend{
   background-color: #383838;
-  width: 40%;
+  width: 98%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin: 1rem 0rem;
+  margin: .3rem 0rem;
   padding: 1rem 0rem;
   text-align: center;
   border-radius: .1rem;
 }
 
 .consultasBackend p{
+  padding: 0rem 1rem;
   color: white;
-  width: 80%;
 }
 
+.flexWidth2{
+  color: white;
+  padding: 0rem 1rem;
+  flex: 5%;
+}
+
+.flexWidth{
+  color: white;
+  padding: 0rem 1rem;
+  flex: 85%;
+}
+
+
+/*--------Viajes--------*/
 
 .containerLinkCategoriaViajes{
   flex: 85%;
@@ -210,6 +222,7 @@ nav .ul-desktop{
   gap: 1rem;
   justify-content: space-evenly;
   align-items: center;
+  padding-top: 5rem;
 }
 
 .linkCategoria{

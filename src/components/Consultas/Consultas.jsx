@@ -37,10 +37,10 @@ const Consultas = () => {
     <div className='consultasBackendContainer'>
         {consultas.map((item, index) => (
           <div className='consultasBackend'>
-            <p><b>Nombre:</b> {item.nombre} {item.apellido}</p>
-            <p><b>Email:</b> {item.email}</p>
-            <p><b>Telefono:</b> {item.telefono}</p>
-            <p><b>Consulta:</b> {item.consulta}</p>
+            <p className='flexWidth2'><b>Nombre:</b> {item.nombre} {item.apellido}</p>
+            <p className='flexWidth2'><b>Email:</b> {item.email}</p>
+            <p className='flexWidth2'><b>Telefono:</b> {item.telefono}</p>
+            <p className='flexWidth'><b>Consulta:</b> {item.consulta}</p>
           </div>
         ))}
     </div>    
