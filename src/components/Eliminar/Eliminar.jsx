@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../services'
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, deleteDoc, getDocs, doc, setDoc } from 'firebase/firestore';
 
 const Eliminar = () => {
 
     const [viajes, setViajes] = useState([]);
+
+    const deleteSubmit = async (element) => { 
+      await deleteDoc(doc(db, "viajes", element))
+      alert('Objeto eliminado, recargue la pagina para ver cambios')
+    }
 
     useEffect(() => {
 
@@ -34,15 +39,17 @@ const Eliminar = () => {
     }, [])
 
   return (
-    <div className='containerLinkCategoriaViajes'>
+    <div className='consultasBackendContainer'>
         {viajes.map((item, index) => (
-          <div className='linkCategoria'>
-              <div className='containerCategoria' >
-                <img src={item.img} alt=""/>
-                <div className='nombreCategoria'>
-                    <h5>{item.nombre}</h5>
-                </div>
-            </div>
+          <div className='consultasBackend'>
+            <p className='flexWidth3'><b>Nombre</b>{item.nombre}</p>
+            <p className='flexWidth3'><b>Destino</b> {item.destino}</p>
+            <p className='flexWidth3'><b>Duracion</b> {item.duracion}</p>
+            <p className='flexWidth3'><b>Transporte</b> {item.transporte}</p>
+            <p className='flexWidth3'><b>Hotel</b> {item.hotel}</p>
+            <p className='flexWidth3'><b>categoria</b> {item.categoria}</p>
+            <p className='flexWidth3'><b>Busqueda</b> {item.busqueda}</p>
+            <button className='inputConsultaBtn' onClick={()=>deleteSubmit(item.id)}>Eliminar</button>
           </div>
         ))}
     </div>    

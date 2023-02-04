@@ -1,58 +1,63 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../services'
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, deleteDoc, getDocs, doc, setDoc } from 'firebase/firestore';
+import 'boxicons'
 
 const Reservas = () => {
 
-    const [reservas, setReservas] = useState([]);
+  const [consultas, setConsultas] = useState([]);
 
-    useEffect(() => {
+  const deleteSubmit = async (element) => { 
+    await deleteDoc(doc(db, "reservas", element))
+    alert('Objeto eliminado, recargue la pagina para ver cambios')
+  }
 
-        const getData = async () => {
-          const data = collection(db, "reservas");
-          const col = await getDocs(data);
-          const res = col.docs.map((doc) => doc={id:doc.id, ...doc.data()} );
-          return res;
-      }
-      
-      const task = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(getData())
-          
-        }, 1000);
+  useEffect(() => {
+
+      const getData = async () => {
+        const data = collection(db, "reservas");
+        const col = await getDocs(data);
+        const res = col.docs.map((doc) => doc={id:doc.id, ...doc.data()} );
+        return res;
+    }
+    
+    const task = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(getData())
+        
+      }, 400);
+    })
+  
+    task
+      .then((resultado) => {
+        setConsultas(resultado)
       })
-    
-      task
-        .then((resultado) => {
-            setReservas(resultado)
-        })
-        .catch((err) => console.log(err))
-    
-      return () => {
-          
-      }
-    }, [])
+      .catch((err) => console.log(err))
+  
+    return () => {
+        
+    }
+  }, [])
 
-  return (
-    <div className='consultasBackendContainer'>
-        {reservas.map((item, index) => (
-          <div className='consultasBackend'>
-            <p><b>Nombre:</b> {item.nombre} {item.apellido}</p>
-            <p><b>Email:</b> {item.email}</p>
-            <p><b>Telefono:</b> {item.telefono}</p>
-            <p><b>Consulta:</b> {item.reserva}</p>
-            <div>
-                <p>Viaje:</p>
-                <p><b>Nombre: </b>{item.viajeForm.nombre}</p>
-                <p><b>precio: </b>{item.viajeForm.precio}</p>
-                <p><b>destino: </b>{item.viajeForm.destino}</p>
-                <p><b>transporte: </b>{item.viajeForm.transporte}</p>
-                <p><b>descripcion: </b>{item.viajeForm.descripcion}</p>
-            </div>
+return (
+  <div className='consultasBackendContainer'>
+      {consultas.map((item, index) => (
+        <div className='consultasBackend'>
+          {item.visto == "false" && <div className='visto'><box-icon name='x' color='red'></box-icon></div>}
+          {item.visto == "true" && <div className='visto'><box-icon name='check' color='green'></box-icon></div>}
+          <p className='flexWidth2'><b>Nombre</b>{item.nombre} {item.apellido}</p>
+          <p className='flexWidth2'><b>Email</b>{item.email}</p>
+          <p className='flexWidth2'><b>Telefono</b>{item.telefono}</p>
+          <p className='flexWidth2'><b>Consulta: </b>{item.reserva}</p>
+          <div className='flexWidth2'>
+            <b>Viaje:</b>
+            <p className='flexWidth2'>{item.viajeForm.nombre}, ${item.viajeForm.precio}, {item.viajeForm.destino}, {item.viajeForm.hotel},</p>
           </div>
-        ))}
-    </div>    
-  )
+          <button className='inputConsultaBtn' onClick={()=>deleteSubmit(item.id)}>Eliminar</button>
+        </div>
+      ))}
+  </div>    
+)
 }
 
 export default Reservas

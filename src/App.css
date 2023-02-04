@@ -166,16 +166,6 @@ nav .ul-desktop{
   color: white;
 }
 
-.inputConsultaBtn{
-  width: 150px;
-  outline: none;
-  background-color: #383838;
-  color: white;
-  border-radius: .2rem;
-  border: none; 
-  padding: .3rem;
-}
-
 .consultasBackendContainer{
   padding-top: 10vh;
   display: flex;
@@ -189,29 +179,58 @@ nav .ul-desktop{
   width: 98%;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: .3rem 0rem;
   padding: 1rem 0rem;
   text-align: center;
   border-radius: .1rem;
 }
 
-.consultasBackend p{
-  padding: 0rem 1rem;
-  color: white;
-}
 
 .flexWidth2{
   color: white;
   padding: 0rem 1rem;
-  flex: 5%;
+  flex: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.flexWidth3{
+  color: white;
+  padding: 0rem 1rem;
+  flex: 9%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .flexWidth{
   color: white;
   padding: 0rem 1rem;
-  flex: 85%;
+  flex: 70%;
 }
 
+.inputConsultaBtn{
+  width: 6rem;
+  height: 2.3rem;
+  outline: none;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: .2rem;
+  border: 1px solid rgb(0, 0, 0);
+  margin: 0rem 1rem;
+  transition: .4s;
+}
+
+.inputConsultaBtn:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.visto{
+  margin: 0rem 1rem;
+}
 
 /*--------Viajes--------*/
 

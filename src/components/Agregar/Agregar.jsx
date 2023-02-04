@@ -19,6 +19,7 @@ export const Agregar = () => {
         traslado: "",
         alojamiento: "",
         asistencia: "",
+        playa: "",
         img: ""
       });
 
@@ -123,6 +124,7 @@ export const Agregar = () => {
         <option value="bolivia">Bolivia</option>
         <option value="brasil">Brasil</option>
         <option value="chile">Chile</option>
+        <option value="venezuela">Venezuela</option>
         <option value="colombia">Colombia</option>
         <option value="costarica">Costa Rica</option>
         <option value="cuba">Cuba</option>
