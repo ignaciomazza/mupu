@@ -73,7 +73,7 @@ const Consultas = () => {
   return (
     <div className='consultasBackendContainer'>
         {consultas.map((item, index) => (
-          <div className='consultasBackend'>
+          <div className='consultasBackend' key={index.toString()}>
             {item.visto == "false" && <div className='visto'><box-icon name='x' color='red'></box-icon></div>}
             {item.visto == "true" && <div className='visto'><box-icon name='check' color='green'></box-icon></div>}
             <p className='flexWidth2'><b>Nombre</b>{item.nombre} {item.apellido}</p>

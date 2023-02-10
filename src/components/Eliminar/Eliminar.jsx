@@ -41,7 +41,7 @@ const Eliminar = () => {
   return (
     <div className='consultasBackendContainer'>
         {viajes.map((item, index) => (
-          <div className='consultasBackend'>
+          <div className='consultasBackend' key={index.toString()}>
             <p className='flexWidth3'><b>Nombre</b>{item.nombre}</p>
             <p className='flexWidth3'><b>Destino</b> {item.destino}</p>
             <p className='flexWidth3'><b>Duracion</b> {item.duracion}</p>
