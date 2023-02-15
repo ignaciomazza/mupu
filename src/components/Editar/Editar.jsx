@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../services'
 import { collection, deleteDoc, getDocs, doc, setDoc } from 'firebase/firestore';
+import { Link } from "react-router-dom";
 
-const Eliminar = () => {
-
+const Editar = () => {
     const [viajes, setViajes] = useState([]);
 
     const deleteSubmit = async (element) => { 
@@ -49,11 +49,11 @@ const Eliminar = () => {
             <p className='flexWidth3'><b>Hotel</b> {item.hotel}</p>
             <p className='flexWidth3'><b>categoria</b> {item.categoria}</p>
             <p className='flexWidth3'><b>Busqueda</b> {item.busqueda}</p>
-            <button className='inputConsultaBtn' onClick={()=>deleteSubmit(item.id)}>Editar</button>
+            <button className='inputConsultaBtn'><Link to={`/editarDetail/${item.id}`}>Editar</Link></button>
           </div>
         ))}
     </div>    
   )
 }
 
-export default Eliminar
+export default Editar

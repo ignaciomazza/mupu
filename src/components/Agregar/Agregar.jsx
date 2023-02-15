@@ -7,6 +7,7 @@ export const Agregar = () => {
     const [formulario, setFormulario] = useState({
         nombre: "",
         precio: "",
+        moneda: "",
         duracion: "",
         hotel: "",
         descripcion: "",
@@ -26,7 +27,7 @@ export const Agregar = () => {
       const [file, setFile] = useState("")
       const [url, setUrl] = useState("")
     
-      const {nombre, precio, duracion, hotel, descripcion, transporte, categoria, continente, pais, provincia, busqueda, traslado, alojamiento, asistencia, img } = formulario;
+      const {nombre, precio, moneda, duracion, hotel, descripcion, transporte, categoria, continente, pais, provincia, busqueda, traslado, alojamiento, asistencia, img } = formulario;
 
       
       // const imagen =  uploadFile(file)
@@ -40,11 +41,11 @@ export const Agregar = () => {
           });
       }
 
-      const setInFireBase = async (nombre, precio, duracion, hotel, descripcion, transporte, categoria, continente, pais, provincia, busqueda, traslado, alojamiento, asistencia, destino, regimen, excursiones, img) => {
+      const setInFireBase = async (nombre, precio, moneda, duracion, hotel, descripcion, transporte, categoria, continente, pais, provincia, busqueda, traslado, alojamiento, asistencia, destino, regimen, excursiones, img) => {
         if (nombre != "" && precio != "" && duracion != "" && hotel != "" && descripcion != "" && transporte != "" && categoria != "" && continente != "" && pais != "" && busqueda != "" && traslado != "" && alojamiento != "" && asistencia != "" && destino != "" && regimen != "" && excursiones != "") {
           try {
             const data = collection(db, "viajes");
-            const col = await addDoc(data, nombre, precio, duracion, hotel, descripcion, transporte, categoria, continente, pais, provincia, busqueda, traslado, alojamiento, asistencia, destino, regimen, excursiones, img);
+            const col = await addDoc(data, nombre, precio, moneda, duracion, hotel, descripcion, transporte, categoria, continente, pais, provincia, busqueda, traslado, alojamiento, asistencia, destino, regimen, excursiones, img);
             alert("Su numero de orden es: " + col.id)
           } catch (error) {
             console.log(error)
@@ -59,6 +60,12 @@ export const Agregar = () => {
       <input type="text" name="nombre" className='inputConsultaText padin' placeholder='Nombre' onChange={handleChange}/>
       <input type="text" name="destino" className='inputConsultaText' placeholder='Destino' onChange={handleChange}/>
       <input type="number" name="precio" className='inputConsultaText' placeholder='Precio' onChange={handleChange}/>
+      <p className='textoConsulta'>Moneda</p>
+      <select name="moneda" onChange={handleChange} className='inputConsultaText'>
+        <option value=""></option>
+        <option value="dolares">Dolares</option>
+        <option value="pesos">Pesos</option>
+      </select>
       <input type="text" name="duracion" className='inputConsultaText' placeholder='Duracion' onChange={handleChange}/>
       <input type="text" name="hotel" className='inputConsultaText' placeholder='Hotel' onChange={handleChange}/>
       <input type="text" name="descripcion" className='inputConsultaText' placeholder='Descripcion' onChange={handleChange}/>

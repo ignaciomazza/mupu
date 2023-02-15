@@ -25,6 +25,7 @@ const NavBar = (props) => {
         <ul className='ul-desktop'>
           <li><Link to={`/`}>Agregar Viaje</Link></li>
           <li><Link to={`/eliminar`}>Eliminar Viaje</Link></li>
+          <li><Link to={`/editar`}>Editar Viaje</Link></li>
           <li><Link to={`/consultas`}>Consultas</Link></li>
           <li><Link to={`/reservas`}>Reservas</Link></li>
         </ul>
